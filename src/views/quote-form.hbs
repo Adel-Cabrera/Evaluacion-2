@@ -1,0 +1,27 @@
+{{> navbar}}
+<div class="container mt-3">
+  <h1>
+    {{#if id}}
+      Update quote "{{author}}" ({{id}})
+    {{else}}
+      Create new quote
+    {{/if}}
+  </h1>
+  <form action="/quotes/{{#if id}}{{id}}/update{{else}}create{{/if}}" method="POST">
+    <div class="mb-3">
+      <label for="author" class="form-label">Author</label>
+      <input type="text" class="form-control" name="author" aria-describedby="authorHelp" required="true" value="{{author}}">
+    </div>
+    <div class="mb-3">
+      <label for="quote" class="form-label">Quote</label>
+      <textarea class="form-control" name="quote" rows="3" aria-describedby="contentHelp">{{quote}}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="author" class="form-label">Photo</label>
+      <input type="text" class="form-control" name="photo" aria-describedby="imageHelp" required="true" value="{{photo}}">
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

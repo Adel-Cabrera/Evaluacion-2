@@ -1,0 +1,23 @@
+{{> navbar}}
+<div class="container mt-3">
+  <header class="my-5">
+    <h1>Welcome to the quote forum</h1>
+    <p> <i>
+      "What we do in life echoes in eternity"
+      </i>
+    </p>
+    <a href="/about">About me</a>
+  </header>
+  <hr>
+  <h3 class="mt-5 mb-3">Latests quotes</h3>
+  {{#each quotes}}
+    <div class="card mb-3">
+      <div class="card-body">
+        <img src="{{this.photo}}" width="250px" height="250px">
+        <h5 class="card-author">{{this.author}}</h5>
+        <p class="card-text">{{this.quote}}</p>
+        <a href="/quotes/{{this.id}}" class="btn btn-primary btn-sm">More...</a>
+      </div>
+    </div>
+  {{/each}}
+</div>
