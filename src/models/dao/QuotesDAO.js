@@ -10,7 +10,7 @@ class QuotesDAO {
 
   async getAll() {
     const response = await this.db.query(
-      "SELECT id, author, quote, photo FROM quotes"
+      "SELECT id, author, quote, photo FROM quotes ORDER BY created_at DESC"
     );
     const rows = response[0];
     return rows;

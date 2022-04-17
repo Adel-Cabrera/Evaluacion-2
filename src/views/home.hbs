@@ -1,23 +1,35 @@
 {{> navbar}}
 <div class="container mt-3">
   <header class="my-5">
-    <h1>Welcome to the quote forum</h1>
-    <p> <i>
-      "What we do in life echoes in eternity"
-      </i>
-    </p>
-    <a href="/about">About me</a>
+    <div class="text-center">
+      <h1>Quote's forum</h1>
+      <p> <i>
+        "What we do in life echoes in eternity"
+        </i>
+      </p>
+    </div>
   </header>
   <hr>
-  <h3 class="mt-5 mb-3">Latests quotes</h3>
+
+  
+  <h3 class="mt-5 mb-3 text-center">Latests quotes</h3>
   {{#each quotes}}
-    <div class="card mb-3">
+
+<div class="card mb-3 d-flex mx-auto" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+        <img src="{{this.photo}}" class="img-fluid rounded-start" width="250px" height="250px">
+    </div>
+    <div class="col-md-8">
       <div class="card-body">
-        <img src="{{this.photo}}" width="250px" height="250px">
-        <h5 class="card-author">{{this.author}}</h5>
+        <h5 class="card-title">{{this.author}}</h5>
         <p class="card-text">{{this.quote}}</p>
-        <a href="/quotes/{{this.id}}" class="btn btn-primary btn-sm">More...</a>
+        <a href="/quotes/{{this.id}}" class="">More...</a>
       </div>
     </div>
+  </div>
+</div>
+
+
   {{/each}}
 </div>
